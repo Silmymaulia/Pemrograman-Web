@@ -7,6 +7,10 @@
         <form action="upload.php" method="post" enctype="multipart/form-data">
             <input type="file" name="fileToUpload" id="fileToUpload">
             <input type="submit" value="Upload File" name="submit">
+            <br><br>
+            <!-- langkah 8  -->
+            <input type="file" name="documentToUpload" id="documentToUpload">
+            <input type="submit" value="Upload File" name="submit">
         </form>
     </body>
 </html>
