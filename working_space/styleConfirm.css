@@ -1,0 +1,41 @@
+/* Confirmation message styles */
+.confirmation-message {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.confirmation-message h2 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.confirmation-message p {
+    color: #666;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.confirmation-message p:last-child {
+    margin-bottom: 0;
+}
+
+.confirmation-message .success {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.confirmation-message .error {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.confirmation-message .info {
+    color: #007bff;
+    font-weight: bold;
+}

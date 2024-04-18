@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Preferences</title>
+    <style>
+        /* Light theme */
+        body.light-theme {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        /* Dark theme */
+        body.dark-theme {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+    </style>
+</head>
+<body class="light-theme">
+    <h1>Theme Preferences</h1>
+    <label for="theme-select">Select Theme:</label>
+    <select id="theme-select">
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+    </select>
+
+    <script>
+        // set cookie
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        // get cookie
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        // apply tema
+        function applyTheme(theme) {
+            document.body.className = theme + "-theme";
+            setCookie('theme', theme, 30); // Set cookie to remember theme choice
+        }
+
+        var savedTheme = getCookie('theme');
+        if (savedTheme) {
+            applyTheme(savedTheme);
+        }
+
+        document.getElementById('theme-select').addEventListener('change', function() {
+            var selectedTheme = this.value;
+            applyTheme(selectedTheme);
+        });
+    </script>
+</body>
+</html>
